@@ -1,19 +1,18 @@
-Part of `edX code`__.
+Part of `edX code <http://code.edx.org/>`_.
 
-__ http://code.edx.org/
-
-edx-django-sites-extensions  |Travis|_ |Codecov|_
+edx-django-sites-extensions  |Travis| |Codecov|
 ===================================================
 .. |Travis| image:: https://travis-ci.org/edx/edx-django-sites-extensions.svg?branch=master
-.. _Travis: https://travis-ci.org/edx/edx-django-sites-extensions
+.. Travis: https://travis-ci.org/edx/edx-django-sites-extensions
 
 .. |Codecov| image:: http://codecov.io/github/edx/edx-django-sites-extensions/coverage.svg?branch=master
 .. Codecov: http://codecov.io/github/edx/edx-django-sites-extensions?branch=master
 
-This package includes extensions to the Django "sites" framework
-used by edX Django IDAs (independently deployable applications).
 
-Overview (please modify)
+This package includes extensions to the Django "sites" framework
+used by Open edX Django IDAs (independently deployable applications).
+
+Overview
 ------------------------
 
 In order to support multitenancy in an IDA, it is helpful to make use of
@@ -70,5 +69,4 @@ Please do not report security issues in public. Please email security@edx.org.
 Mailing List and IRC Channel
 ----------------------------
 
-You can discuss this code in the `edx-code Google Group`__
-__ https://groups.google.com/forum/#!forum/edx-code
+You can discuss this code in the `edx-code Google Group <https://groups.google.com/forum/#!forum/edx-code>`_.
