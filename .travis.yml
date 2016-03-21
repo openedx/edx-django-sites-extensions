@@ -1,27 +1,25 @@
 language: python
 python:
-    - "2.7"
+- '2.7'
 sudo: false
-
-# Cache the pip directory. "cache: pip" doesn't work due to install override. See https://github.com/travis-ci/travis-ci/issues/3239.
 cache:
-  - directories:
-    - $HOME/.cache/pip
+- directories:
+  - $HOME/.cache/pip
 before_install:
-    - "export DISPLAY=:99.0"
-    - "sh -e /etc/init.d/xvfb start"
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
 install:
-    - pip install -U pip wheel codecov
-    - pip install -r requirements/test.txt
+- pip install -U pip wheel codecov
+- pip install -r requirements/test.txt
 script:
-    - make validate
+- make validate
 after_success:
-    - codecov
+- codecov
 deploy:
   provider: pypi
   user: edx
   password:
-    secure: dLYdt8dZKsqaYsyZu630xtP8itgthOtRlj9X/hZY10yKTgBGrJeDEkd6bac/Bf17jr5242oanWfsbABAJ18noB1wdeutBTOyFCTwU4glR5ZbZpJnsIJ8fZf2LB14E62NhW8AJyb2ZHJ+Fyt7LXJZYaByXDHEtIlukulwriUA72M=
+    secure: od0JHgfyWdUSI9jBpeIa18Y3FUAPCBCSUlwq4moJWJa2NCawbZ7utDJQeZ4ra7su2UsCUESvpqlUegEEaER/Pfd7rCnO6HsP68HVORMuCPjmIpAenBFLsgHBLmybvjXQNQk0BCfUhtGvsLzZwF2kG8/HAj+YYoSJgKlDx946kRZQaiwqlkY19ZsGy8iiL529sAibfh7OTiFRwpIIkEnH9wPuiZT8uD2ykzjSmGA+iyZPopyrESYWCL1GuooE5eg0yvR9aGPRVmrLrpG9T8Upg6zAWwsM5uumsFTiwqO704XdL6JZGzaiLi/ISjeuy9evFrI2XPSZGE7dSzmjl7S56GiPHeyvh8+VAYIMCNR4oAIxIWQJ0PJXJcxDJA0D3py0Ed+vq7R2I5lAW5sEV2AKQSIc+hEKQjfeAW8xVZNLBh0s4eW+d9NYSkB9E9aOcQ6KA1APE7J3hE+Zf/oa/Fwzd0LaYc1uTFccDqBMr6WGOIB8Zbrw+c4XeizebdS05ptHNGjnQCTjGo+to6G/Pkiwc1H4cbEZBM8ug8VswK30aDTTDXgv/SJGBnelsZzy0ahyiSbKWHG9V5zosqmh/U/QpenCv2kGO9nUCJsRUQI8znOxmJtcf69PqT//yiIilmhNa/xVmbOnCMEPDEzCiQ1nyH1XYVIr5dzS2/hScD1WqHQ=
   distributions: sdist bdist_wheel
   on:
     tags: true
