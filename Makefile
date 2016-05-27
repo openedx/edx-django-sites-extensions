@@ -1,7 +1,6 @@
 .DEFAULT_GOAL := test
 
-.PHONY: clean compile_translations dummy_translations extract_translations fake_translations help html_coverage \
-	migrate pull_translations push_translations quality requirements test update_translations validate
+.PHONY: clean help migrate quality local-requirements requirements test validate html_coverage
 
 help:
 	@echo "Please use \`make <target>' where <target> is one of"

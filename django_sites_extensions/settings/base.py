@@ -16,6 +16,7 @@ DEBUG = True
 # Application definition
 
 INSTALLED_APPS = (
+    'django.contrib.redirects',
     'django.contrib.sites',
 )
 
@@ -26,8 +27,11 @@ PROJECT_APPS = (
 INSTALLED_APPS += PROJECT_APPS
 
 MIDDLEWARE_CLASSES = (
-    'django_sites_extensions.middleware.CurrentSiteWithDefaultMiddleware',
+    'django.contrib.sites.middleware.CurrentSiteMiddleware',
+    'django_sites_extensions.middleware.RedirectMiddleware',
 )
+
+ROOT_URLCONF = 'django_sites_extensions.tests.urls'
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
@@ -89,3 +93,10 @@ LOGGING = {
         },
     }
 }
+
+############## Settings for RedirectMiddleware ###############
+
+# Setting this to None causes Redirect data to never expire
+# The cache is cleared when Redirect models are saved/deleted
+REDIRECT_CACHE_TIMEOUT = None  # The length of time we cache Redirect model data
+REDIRECT_CACHE_KEY_PREFIX = 'redirects'
