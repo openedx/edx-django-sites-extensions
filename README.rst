@@ -23,20 +23,39 @@ provided by the framework that adds the current site to incoming requests does n
 you to fall back to a site that you can configure in settings in case the current site
 cannot be determined from the host of the incoming request.
 
-The django_sites_extensions.middleware.CurrentSiteWithDefaultMiddleware provided by this package
-extends django.contrib.sites.middleware.CurrentSiteMiddleware to allow for this use case. To enable
-this functionality in your Django project::
+This Django app provided by this package overcomes this issue by monkey patching the
+django.contrib.sites.models.SiteManager.get_current() function which is called by the
+CurrentSiteMiddleware to determine the current site. The patched version of this function
+will first try to determine the current site by checking the host of the incoming request
+and attempting to match a site by domain. If a site cannot be found this way, it will fall
+back to the default site configured by setting the SITE_ID setting.
+
+To enable this functionality in your Django project::
 
 Install this package in your python environment::
 
     $ pip install edx-django-sites-extensions
 
-Replace :code:`django.contrib.sites.middleware.CurrentSiteMiddleware` with
-:code:`django_sites_extensions.middleware.CurrentSiteWithDefaultMiddleware`.
+Add :code:`django.contrib.sites.middleware.CurrentSiteMiddleware` to your :code:`MIDDLEWARE_CLASSES` list.
 
-Add default site setting to Django settings::
+Set the :code:`SITE_ID` setting::
 
-    DEFAULT_SITE_ID = 1
+    SITE_ID = 1
+
+This package also provides a mechanism for settings up URL redirects for your application.
+It makes use of the Django redirects app and provides middleware which will check for
+Redirect models whose old_path field matches the path of the incoming request and redirects
+those requests to the new_path of the Redirect model.
+
+To enable this functionality in your Django project::
+
+Install this package in your python environment::
+
+    $ pip install edx-django-sites-extensions
+
+Add :code:`django_sites_extensions.middleware.RedirectMiddleware` to your :code:`MIDDLEWARE_CLASSES` list.
+
+You can then use Django admin to create Redirect models.
 
 Documentation (please modify)
 -----------------------------
