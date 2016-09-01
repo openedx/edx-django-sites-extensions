@@ -3,6 +3,7 @@ import datetime
 
 from django.contrib.sites.models import Site, SiteManager, SITE_CACHE
 from django.core.exceptions import ImproperlyConfigured
+from django.utils import timezone
 
 
 # Dict which maps Site id/domain to a datetime
@@ -62,7 +63,7 @@ def patched_get_site_by_id(self, site_id):
     Site model's relationship accessors to take effect without having to manual
     recycle all Django worker processes active in an application environment.
     """
-    now = datetime.datetime.utcnow()
+    now = timezone.now()
     site = SITE_CACHE.get(site_id)
     cache_timeout = SITE_CACHE_TIMEOUTS.get(site_id, now)
     if not site or cache_timeout <= now:
@@ -84,7 +85,7 @@ def patched_get_site_by_request(self, request):
     recycle all Django worker processes active in an application environment.
     """
     host = request.get_host()
-    now = datetime.datetime.utcnow()
+    now = timezone.now()
     site = SITE_CACHE.get(host)
     cache_timeout = SITE_CACHE_TIMEOUTS.get(host, now)
     if not site or cache_timeout <= now:

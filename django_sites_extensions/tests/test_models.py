@@ -6,6 +6,7 @@ from django.core.exceptions import ImproperlyConfigured
 from django.http import HttpRequest
 from django.test.testcases import TestCase
 from django.test.utils import override_settings
+from django.utils import timezone
 
 from django_sites_extensions.models import SITE_CACHE_TIMEOUTS
 
@@ -51,7 +52,7 @@ class PatchedSiteManagerTestCase(TestCase):
         """
         request = HttpRequest()
         request.META['HTTP_HOST'] = self.foo_site.domain
-        past = datetime.datetime.utcnow() - datetime.timedelta(0, 300)
+        past = timezone.now() - datetime.timedelta(0, 300)
 
         # Test getting current site by request host
         site = Site.objects.get_current(request)
