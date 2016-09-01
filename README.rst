@@ -23,12 +23,22 @@ provided by the framework that adds the current site to incoming requests does n
 you to fall back to a site that you can configure in settings in case the current site
 cannot be determined from the host of the incoming request.
 
-This Django app provided by this package overcomes this issue by monkey patching the
+The Django app provided by this package overcomes this issue by monkey patching the
 django.contrib.sites.models.SiteManager.get_current() function which is called by the
 CurrentSiteMiddleware to determine the current site. The patched version of this function
 will first try to determine the current site by checking the host of the incoming request
 and attempting to match a site by domain. If a site cannot be found this way, it will fall
 back to the default site configured by setting the SITE_ID setting.
+
+Another issue with the Django "sites" framework is that it uses an in-memory cache of Site
+models which makes it difficult to update models associated with the Site model via Django
+admin and have those updates be reflected across all Python processes in a mulit-process
+application environment.
+
+Again the Django app provided by this package monkey patches the private SiteManager query
+functions that implement the in-memory caching mechanism to add a configurable timeout to
+the Site cache allowing model updates to be reflected across all processes after the specified
+timeout.
 
 To enable this functionality in your Django project::
 

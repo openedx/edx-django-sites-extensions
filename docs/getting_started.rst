@@ -1,16 +1,18 @@
 Getting Started
 ===============
-Install this package in your python environment:
-
-.. code-block:: bash
+Install this package in your python environment::
 
     $ pip install edx-django-sites-extensions
 
-Replace :code:`django.contrib.sites.middleware.CurrentSiteMiddleware` with
-:code:`django_sites_extensions.middleware.CurrentSiteWithDefaultMiddleware`.
+Add :code:`django.contrib.sites.middleware.CurrentSiteMiddleware` to your :code:`MIDDLEWARE_CLASSES` list.
 
-Add default site setting to Django settings:
+Set the :code:`SITE_ID` setting::
 
-.. code-block:: bash
+    SITE_ID = 1
 
-    DEFAULT_SITE_ID = 1
+Set up RedirectMiddleware
+-------------------------
+
+Add :code:`django_sites_extensions.middleware.RedirectMiddleware` to your :code:`MIDDLEWARE_CLASSES` list.
+
+You can then use Django admin to create Redirect models.

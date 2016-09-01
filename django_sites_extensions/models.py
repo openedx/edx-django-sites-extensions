@@ -1,6 +1,25 @@
 """ Django Sites framework models overrides """
-from django.contrib.sites.models import Site, SiteManager
+import datetime
+
+from django.contrib.sites.models import Site, SiteManager, SITE_CACHE
 from django.core.exceptions import ImproperlyConfigured
+
+
+# Dict which maps Site id/domain to a datetime
+# when the corresponding when the corresponding
+# Site model cached in SITE_CACHE should be flushed.
+SITE_CACHE_TIMEOUTS = {}
+
+
+def get_site_cache_ttl():
+    """
+    Get the SITE_CACHE_TTL timedelta.
+
+    Defaults to 5 minutes if SITE_CACHE_TTL has not been configured in application settings.
+    """
+    # Imported here to avoid circular import
+    from django.conf import settings
+    return datetime.timedelta(0, getattr(settings, 'SITE_CACHE_TTL', 300))
 
 
 def patched_get_current(self, request=None):
@@ -13,6 +32,7 @@ def patched_get_current(self, request=None):
     a site cannot be found based on the host of the request, we return the
     site which matches the configured SITE_ID setting.
     """
+    # Imported here to avoid circular import
     from django.conf import settings
     if request:
         try:
@@ -31,4 +51,49 @@ def patched_get_current(self, request=None):
     )
 
 
+def patched_get_site_by_id(self, site_id):
+    """
+    Monkey patched version of Django's SiteManager._get_site_by_id() function.
+
+    Adds a configurable timeout to the in-memory SITE_CACHE for each cached Site.
+    This allows for the use of an in-memory cache for Site models, avoiding one
+    or more DB hits on every request made to the Django application, but also allows
+    for changes made to models associated with the Site model and accessed via the
+    Site model's relationship accessors to take effect without having to manual
+    recycle all Django worker processes active in an application environment.
+    """
+    now = datetime.datetime.utcnow()
+    site = SITE_CACHE.get(site_id)
+    cache_timeout = SITE_CACHE_TIMEOUTS.get(site_id, now)
+    if not site or cache_timeout <= now:
+        site = self.get(pk=site_id)
+        SITE_CACHE[site_id] = site
+        SITE_CACHE_TIMEOUTS[site_id] = now + get_site_cache_ttl()
+    return SITE_CACHE[site_id]
+
+
+def patched_get_site_by_request(self, request):
+    """
+    Monkey patched version of Django's SiteManager._get_site_by_request() function.
+
+    Adds a configurable timeout to the in-memory SITE_CACHE for each cached Site.
+    This allows for the use of an in-memory cache for Site models, avoiding one
+    or more DB hits on every request made to the Django application, but also allows
+    for changes made to models associated with the Site model and accessed via the
+    Site model's relationship accessors to take effect without having to manual
+    recycle all Django worker processes active in an application environment.
+    """
+    host = request.get_host()
+    now = datetime.datetime.utcnow()
+    site = SITE_CACHE.get(host)
+    cache_timeout = SITE_CACHE_TIMEOUTS.get(host, now)
+    if not site or cache_timeout <= now:
+        site = self.get(domain__iexact=host)
+        SITE_CACHE[host] = site
+        SITE_CACHE_TIMEOUTS[host] = now + get_site_cache_ttl()
+    return SITE_CACHE[host]
+
+
 SiteManager.get_current = patched_get_current
+SiteManager._get_site_by_id = patched_get_site_by_id  # pylint: disable=protected-access
+SiteManager._get_site_by_request = patched_get_site_by_request  # pylint: disable=protected-access
