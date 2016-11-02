@@ -20,7 +20,7 @@ The command below runs the Python tests and code quality validation—Pylint and
 
 .. code-block:: bash
 
-    $ make validate
+    $ make test
 
 Code quality validation can be run independently with:
 
