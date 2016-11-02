@@ -1,4 +1,5 @@
 """ django_sites_extensions application configuration """
+
 from django.apps import AppConfig
 
 

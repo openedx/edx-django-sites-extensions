@@ -3,6 +3,6 @@ branch = True
 data_file = .coverage
 source=django_sites_extensions
 omit =
-    django_sites_extensions/settings*
+    django_sites_extensions/apps.py
     django_sites_extensions/tests*
     *migrations*
