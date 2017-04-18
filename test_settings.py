@@ -5,6 +5,8 @@ In a real-world use case, apps in this project are installed into other
 Django applications, so these settings will not be used.
 """
 
+ALLOWED_HOSTS = ['*']
+
 SECRET_KEY = 'insecure-secret-key'
 
 INSTALLED_APPS = (
