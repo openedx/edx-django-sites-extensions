@@ -1,19 +1,19 @@
 Part of `edX code <http://code.edx.org/>`_.
 
-edx-django-sites-extensions  |Travis| |Codecov|
-===================================================
+edx-django-sites-extensions  |Travis|_ |Codecov|_
+=================================================
 .. |Travis| image:: https://travis-ci.org/edx/edx-django-sites-extensions.svg?branch=master
-.. Travis: https://travis-ci.org/edx/edx-django-sites-extensions
+.. _Travis: https://travis-ci.org/edx/edx-django-sites-extensions?branch=master
 
 .. |Codecov| image:: http://codecov.io/github/edx/edx-django-sites-extensions/coverage.svg?branch=master
-.. Codecov: http://codecov.io/github/edx/edx-django-sites-extensions?branch=master
+.. _Codecov: http://codecov.io/github/edx/edx-django-sites-extensions?branch=master
 
 
 This package includes extensions to the Django "sites" framework
 used by Open edX Django IDAs (independently deployable applications).
 
 Overview
-------------------------
+--------
 
 In order to support multitenancy in an IDA, it is helpful to make use of
 the `Django "sites" framework <https://docs.djangoproject.com/en/1.9/ref/contrib/sites/>`_.
@@ -67,8 +67,8 @@ Add :code:`django_sites_extensions.middleware.RedirectMiddleware` to your :code:
 
 You can then use Django admin to create Redirect models.
 
-Documentation (please modify)
------------------------------
+Documentation
+-------------
 
 The docs for edx-django-sites-extensions are on Read the Docs:  https://edx-django-sites-extensions.readthedocs.org.
 
