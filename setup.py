@@ -10,7 +10,7 @@ with open('README.rst') as readme:
 
 setup(
     name='edx-django-sites-extensions',
-    version='2.2.0',
+    version='2.3.0',
     description='Custom extensions for the Django sites framework',
     long_description=long_description,
     classifiers=[
