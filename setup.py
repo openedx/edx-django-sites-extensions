@@ -2,7 +2,7 @@
 """
 Setup for edx-django-sites-extensions package
 """
-from setuptools import setup, find_packages
+from setuptools import setup
 
 
 with open('README.rst') as readme:
@@ -34,7 +34,7 @@ setup(
     author='edX',
     author_email='oscm@edx.org',
     license='AGPL',
-    packages=find_packages(exclude=['tests', '*.tests']),
+    packages=['django_sites_extensions'],
     install_requires=[
         'django>=1.8,<2.0',
     ],
