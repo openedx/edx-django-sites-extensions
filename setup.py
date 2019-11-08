@@ -10,7 +10,7 @@ with open('README.rst') as readme:
 
 setup(
     name='edx-django-sites-extensions',
-    version='2.4.0',
+    version='2.4.1',
     description='Custom extensions for the Django sites framework',
     long_description=long_description,
     classifiers=[
@@ -24,10 +24,10 @@ setup(
         'Intended Audience :: Developers',
         'Environment :: Web Environment',
         'Framework :: Django',
-        'Framework :: Django :: 1.8',
-        'Framework :: Django :: 1.9',
-        'Framework :: Django :: 1.10',
         'Framework :: Django :: 1.11',
+        'Framework :: Django :: 2.0',
+        'Framework :: Django :: 2.1',
+        'Framework :: Django :: 2.2',
     ],
     keywords='Django sites edx',
     url='https://github.com/edx/edx-django-sites-extensions',
@@ -36,6 +36,7 @@ setup(
     license='AGPL',
     packages=['django_sites_extensions'],
     install_requires=[
-        'django>=1.8,<2.0',
+        'django>=1.8,<2.0;python_version<"3"',
+        'django>=1.11;python_version>"3"',
     ],
 )

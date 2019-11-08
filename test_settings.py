@@ -30,7 +30,7 @@ DATABASES = {
     }
 }
 
-MIDDLEWARE_CLASSES = (
+MIDDLEWARE = (
     'django.contrib.sites.middleware.CurrentSiteMiddleware',
     'django_sites_extensions.middleware.RedirectMiddleware',
 )

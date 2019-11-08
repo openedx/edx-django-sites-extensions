@@ -12,5 +12,6 @@ class DjangoSitesExtensionsConfig(AppConfig):
     def ready(self):
         """ Set up for django_sites_extensions app """
         # pylint: disable=unused-variable
+        # pylint: disable=unused-import
         from django_sites_extensions import models
         from django_sites_extensions import signals

@@ -3,4 +3,5 @@
 
 def test(request):  # pylint: disable=unused-argument
     """ Placeholder test view """
+    # pylint: disable=unnecessary-pass
     pass

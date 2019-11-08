@@ -7,6 +7,7 @@ from django.contrib.redirects.models import Redirect
 from django.shortcuts import redirect
 
 
+# pylint: disable = useless-object-inheritance
 class RedirectMiddleware(object):
     """
     Redirects requests for URLs persisted using the django.contrib.redirects.models.Redirect model.
@@ -25,3 +26,4 @@ class RedirectMiddleware(object):
         redirect_to = redirects.get(request.path)
         if redirect_to:
             return redirect(redirect_to, permanent=True)
+        return None
