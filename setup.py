@@ -2,15 +2,17 @@
 """
 Setup for edx-django-sites-extensions package
 """
+import io
+
 from setuptools import setup
 
 
-with open('README.rst') as readme:
+with io.open('README.rst',  encoding='utf-8') as readme:
     long_description = readme.read()
 
 setup(
     name='edx-django-sites-extensions',
-    version='2.4.1',
+    version='2.4.2',
     description='Custom extensions for the Django sites framework',
     long_description=long_description,
     classifiers=[

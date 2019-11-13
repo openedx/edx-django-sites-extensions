@@ -6,3 +6,4 @@ mock
 nose-ignore-docstring
 pep8
 tox
+twine

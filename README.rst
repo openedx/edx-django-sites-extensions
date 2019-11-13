@@ -40,9 +40,10 @@ functions that implement the in-memory caching mechanism to add a configurable t
 the Site cache allowing model updates to be reflected across all processes after the specified
 timeout.
 
-To enable this functionality in your Django project::
+To enable this functionality in your Django project:
 
-Install this package in your python environment::
+Install this package in your python environment
+    ::
 
     $ pip install edx-django-sites-extensions
 
@@ -57,11 +58,12 @@ It makes use of the Django redirects app and provides middleware which will chec
 Redirect models whose old_path field matches the path of the incoming request and redirects
 those requests to the new_path of the Redirect model.
 
-To enable this functionality in your Django project::
+To enable this functionality in your Django project:
 
-Install this package in your python environment::
+Install this package in your python environment
+    ::
 
-    $ pip install edx-django-sites-extensions
+        $ pip install edx-django-sites-extensions
 
 Add :code:`django_sites_extensions.middleware.RedirectMiddleware` to your :code:`MIDDLEWARE_CLASSES` list.
 
