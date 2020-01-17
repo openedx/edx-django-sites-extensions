@@ -12,7 +12,7 @@ with io.open('README.rst',  encoding='utf-8') as readme:
 
 setup(
     name='edx-django-sites-extensions',
-    version='2.4.2',
+    version='2.4.3',
     description='Custom extensions for the Django sites framework',
     long_description=long_description,
     classifiers=[
