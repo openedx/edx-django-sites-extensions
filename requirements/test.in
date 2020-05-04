@@ -1,0 +1,14 @@
+# Requirements for test runs.
+
+-c constraints.txt
+
+-r base.txt               # Core dependencies for this package
+
+coverage
+django-dynamic-fixture
+django-nose
+edx-lint
+mock
+nose-ignore-docstring
+pep8
+twine
