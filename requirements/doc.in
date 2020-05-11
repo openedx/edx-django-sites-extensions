@@ -1,0 +1,7 @@
+# Dependencies for building documentation
+-c constraints.txt
+
+-r base.in                          # Core dependencies
+
+Sphinx
+sphinx_rtd_theme
