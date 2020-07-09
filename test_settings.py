@@ -15,7 +15,6 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.redirects',
     'django.contrib.sites',
-    'django_nose',
     'django_sites_extensions',
 )
 
@@ -34,13 +33,6 @@ MIDDLEWARE = (
     'django.contrib.sites.middleware.CurrentSiteMiddleware',
     'django_sites_extensions.middleware.RedirectMiddleware',
 )
-
-TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
-
-NOSE_ARGS = [
-    '--with-ignore-docstrings',
-    '--logging-level=DEBUG',
-]
 
 ROOT_URLCONF = 'django_sites_extensions.tests.urls'
 

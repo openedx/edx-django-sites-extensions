@@ -22,7 +22,7 @@ def get_site_cache_ttl():
     Defaults to 5 minutes if SITE_CACHE_TTL has not been configured in application settings.
     """
     # Imported here to avoid circular import
-    from django.conf import settings
+    from django.conf import settings  # pylint: disable=import-outside-toplevel
     return datetime.timedelta(0, getattr(settings, 'SITE_CACHE_TTL', 300))
 
 
@@ -37,7 +37,7 @@ def patched_get_current(self, request=None):
     site which matches the configured SITE_ID setting.
     """
     # Imported here to avoid circular import
-    from django.conf import settings
+    from django.conf import settings  # pylint: disable=import-outside-toplevel
     if request:
         try:
             return self._get_site_by_request(request)  # pylint: disable=protected-access

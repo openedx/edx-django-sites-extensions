@@ -7,7 +7,8 @@ quality:
 	tox -e quality
 
 requirements:
-	pip install -r test_requirements.txt
+	pip install -qr requirements/pip_tools.txt
+	pip-sync requirements/test.txt
 
 test:
 	tox
