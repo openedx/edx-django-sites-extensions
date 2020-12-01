@@ -2,8 +2,8 @@ Part of `edX code <http://code.edx.org/>`_.
 
 edx-django-sites-extensions  |Travis|_ |Codecov|_
 =================================================
-.. |Travis| image:: https://travis-ci.org/edx/edx-django-sites-extensions.svg?branch=master
-.. _Travis: https://travis-ci.org/edx/edx-django-sites-extensions?branch=master
+.. |Travis| image:: https://github.com/edx/edx-django-sites-extensions/workflows/PythonCI/badge.svg?branch=master
+.. _Travis: https://github.com/edx/edx-django-site-extensions/actions?query=workflow%3A%22Python+CI%22
 
 .. |Codecov| image:: http://codecov.io/github/edx/edx-django-sites-extensions/coverage.svg?branch=master
 .. _Codecov: http://codecov.io/github/edx/edx-django-sites-extensions?branch=master
