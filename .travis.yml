@@ -9,7 +9,7 @@ env:
 cache:
 - pip
 install:
-  - pip install -r requirements/travis.txt
+  - pip install -r requirements/ci.txt
 script:
 - make test
 after_success:
