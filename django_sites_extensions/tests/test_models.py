@@ -17,7 +17,7 @@ class PatchedSiteManagerTestCase(TestCase):
     """
 
     def setUp(self):
-        super(PatchedSiteManagerTestCase, self).setUp()
+        super().setUp()
         self.foo_site = Site.objects.create(domain='foo.com')
 
     def test_site_cache_timeout_when_none(self):

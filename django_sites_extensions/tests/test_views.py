@@ -12,7 +12,7 @@ class ViewsTestCase(TestCase):
     """
 
     def setUp(self):
-        super(ViewsTestCase, self).setUp()
+        super().setUp()
         self.home_url = reverse('home')
         self.login_url = reverse('login')
 

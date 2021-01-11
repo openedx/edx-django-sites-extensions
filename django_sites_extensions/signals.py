@@ -15,5 +15,5 @@ if 'django.contrib.redirects' in settings.INSTALLED_APPS:
         """
         Clears the Redirect cache
         """
-        cache_key = '{prefix}-{site}'.format(prefix=settings.REDIRECT_CACHE_KEY_PREFIX, site=instance.site.domain)
+        cache_key = f'{settings.REDIRECT_CACHE_KEY_PREFIX}-{instance.site.domain}'
         cache.delete(cache_key)

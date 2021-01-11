@@ -18,7 +18,7 @@ class RedirectMiddleware(MiddlewareMixin):
         with the current request URL as the old_path field.
         """
         site = request.site
-        cache_key = '{prefix}-{site}'.format(prefix=settings.REDIRECT_CACHE_KEY_PREFIX, site=site.domain)
+        cache_key = f'{settings.REDIRECT_CACHE_KEY_PREFIX}-{site.domain}'
         redirects = cache.get(cache_key)
         if redirects is None:
             redirects = {redirect.old_path: redirect.new_path for redirect in Redirect.objects.filter(site=site)}
