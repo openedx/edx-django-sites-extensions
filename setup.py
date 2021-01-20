@@ -7,7 +7,7 @@ import io
 from setuptools import setup
 
 
-with io.open('README.rst',  encoding='utf-8') as readme:
+with open('README.rst',  encoding='utf-8') as readme:
     long_description = readme.read()
 
 def load_requirements(*requirements_paths):
@@ -34,14 +34,13 @@ def is_requirement(line):
 
 setup(
     name='edx-django-sites-extensions',
-    version='2.5.1',
+    version='3.0.0',
     description='Custom extensions for the Django sites framework',
     long_description=long_description,
     classifiers=[
         'Development Status :: 4 - Beta',
         'License :: OSI Approved :: GNU Affero General Public License v3',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.8',
         'Topic :: Internet',
         'Intended Audience :: Developers',
