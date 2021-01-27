@@ -3,7 +3,7 @@ Part of `edX code <http://code.edx.org/>`_.
 edx-django-sites-extensions  |CI|_ |Codecov|_
 =================================================
 .. |CI| image:: https://github.com/edx/edx-django-sites-extensions/workflows/Python%20CI/badge.svg?branch=master
-.. _CI: https://github.com/edx/edx-django-site-extensions/actions?query=workflow%3A%22Python+CI%22
+.. _CI: https://github.com/edx/edx-django-sites-extensions/actions?query=workflow%3A%22Python+CI%22
 
 .. |Codecov| image:: http://codecov.io/github/edx/edx-django-sites-extensions/coverage.svg?branch=master
 .. _Codecov: http://codecov.io/github/edx/edx-django-sites-extensions?branch=master
