@@ -38,7 +38,7 @@ pytz==2020.5
     #   django
 requests==2.25.1
     # via sphinx
-snowballstemmer==2.0.0
+snowballstemmer==2.1.0
     # via sphinx
 sphinx-rtd-theme==0.5.1
     # via -r requirements/doc.in
@@ -60,7 +60,7 @@ sphinxcontrib-serializinghtml==1.1.4
     # via sphinx
 sqlparse==0.4.1
     # via django
-urllib3==1.26.2
+urllib3==1.26.3
     # via requests
 
 # The following packages are considered to be unsafe in a requirements file:
