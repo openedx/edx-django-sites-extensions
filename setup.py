@@ -34,7 +34,7 @@ def is_requirement(line):
 
 setup(
     name='edx-django-sites-extensions',
-    version='3.0.0',
+    version='3.1.0',
     description='Custom extensions for the Django sites framework',
     long_description=long_description,
     classifiers=[
@@ -47,6 +47,9 @@ setup(
         'Environment :: Web Environment',
         'Framework :: Django',
         'Framework :: Django :: 2.2',
+        'Framework :: Django :: 3.0',
+        'Framework :: Django :: 3.1',
+        'Framework :: Django :: 3.2',
     ],
     keywords='Django sites edx',
     url='https://github.com/edx/edx-django-sites-extensions',
