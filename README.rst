@@ -32,7 +32,7 @@ back to the default site configured by setting the SITE_ID setting.
 
 Another issue with the Django "sites" framework is that it uses an in-memory cache of Site
 models which makes it difficult to update models associated with the Site model via Django
-admin and have those updates be reflected across all Python processes in a mulit-process
+admin and have those updates be reflected across all Python processes in a multi-process
 application environment.
 
 Again the Django app provided by this package monkey patches the private SiteManager query
