@@ -3,6 +3,8 @@
 Setup for edx-django-sites-extensions package
 """
 import io
+import os
+import re
 
 from setuptools import setup
 
@@ -32,9 +34,27 @@ def is_requirement(line):
     """
     return line and not line.startswith(('-r', '#', '-e', 'git+', '-c'))
 
+
+def get_version(*file_paths):
+    """
+    Extract the version string from the file at the given relative path fragments.
+    """
+    filename = os.path.join(os.path.dirname(__file__), *file_paths)
+    with open(filename, encoding='utf-8') as opened_file:
+        version_file = opened_file.read()
+        version_match = re.search(r"^__version__ = ['\"]([^'\"]*)['\"]",
+                                  version_file, re.M)
+    if version_match:
+        return version_match.group(1)
+    raise RuntimeError('Unable to find version string.')
+
+
+VERSION = get_version("django_sites_extensions", "__init__.py")
+
+
 setup(
     name='edx-django-sites-extensions',
-    version='3.1.0',
+    version=VERSION,
     description='Custom extensions for the Django sites framework',
     long_description=long_description,
     classifiers=[
