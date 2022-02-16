@@ -8,7 +8,6 @@ import re
 
 from setuptools import setup
 
-
 with open('README.rst',  encoding='utf-8') as readme:
     long_description = readme.read()
 
@@ -66,9 +65,6 @@ setup(
         'Intended Audience :: Developers',
         'Environment :: Web Environment',
         'Framework :: Django',
-        'Framework :: Django :: 2.2',
-        'Framework :: Django :: 3.0',
-        'Framework :: Django :: 3.1',
         'Framework :: Django :: 3.2',
     ],
     keywords='Django sites edx',
