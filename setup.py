@@ -68,7 +68,7 @@ setup(
         'Framework :: Django :: 3.2',
     ],
     keywords='Django sites edx',
-    url='https://github.com/edx/edx-django-sites-extensions',
+    url='https://github.com/openedx/edx-django-sites-extensions',
     author='edX',
     author_email='oscm@edx.org',
     license='AGPL',
