@@ -2,8 +2,8 @@ Part of `edX code <http://code.edx.org/>`_.
 
 edx-django-sites-extensions  |CI|_ |Codecov|_
 =================================================
-.. |CI| image:: https://github.com/edx/edx-django-sites-extensions/workflows/Python%20CI/badge.svg?branch=master
-.. _CI: https://github.com/edx/edx-django-sites-extensions/actions?query=workflow%3A%22Python+CI%22
+.. |CI| image:: https://github.com/openedx/edx-django-sites-extensions/workflows/Python%20CI/badge.svg?branch=master
+.. _CI: https://github.com/openedx/edx-django-sites-extensions/actions?query=workflow%3A%22Python+CI%22
 
 .. |Codecov| image:: http://codecov.io/github/edx/edx-django-sites-extensions/coverage.svg?branch=master
 .. _Codecov: http://codecov.io/github/edx/edx-django-sites-extensions?branch=master
@@ -87,7 +87,7 @@ How To Contribute
 
 Contributions are very welcome.
 
-Please read `How To Contribute <https://github.com/edx/edx-platform/blob/master/CONTRIBUTING.rst>`_ for details.
+Please read `How To Contribute <https://github.com/openedx/edx-platform/blob/master/CONTRIBUTING.rst>`_ for details.
 
 Even though they were written with ``edx-platform`` in mind, the guidelines
 should be followed for Open edX code in general.
