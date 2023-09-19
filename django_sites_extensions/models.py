@@ -9,9 +9,8 @@ from django.contrib.sites.models import Site, SiteManager
 from django.core.exceptions import ImproperlyConfigured
 
 
-# Dict which maps Site id/domain to a datetime
-# when the corresponding when the corresponding
-# Site model cached in SITE_CACHE should be flushed.
+# Dict which maps Site id/domain to a datetime when the corresponding Site model cached in 
+# SITE_CACHE should be flushed.
 SITE_CACHE_TIMEOUTS = {}
 
 
