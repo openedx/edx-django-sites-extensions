@@ -1,0 +1,2 @@
+asgiref==3.6.0
+django==4.2.6

@@ -16,7 +16,7 @@ class RedirectMiddlewareTestCase(TestCase):
 
     def setUp(self):
         super().setUp()
-        self.middleware = RedirectMiddleware()
+        self.middleware = RedirectMiddleware(get_response=lambda request: None)
         self.site = Site.objects.get(id=1)  # pylint: disable=no-member
         self.redirect = Redirect.objects.create(site_id=1, old_path='/foo', new_path='http://example.com/bar')
 
