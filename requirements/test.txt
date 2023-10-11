@@ -4,10 +4,6 @@
 #
 #    make upgrade
 #
-asgiref==3.5.0
-    # via
-    #   -r requirements/base.txt
-    #   django
 astroid==2.9.3
     # via
     #   pylint
