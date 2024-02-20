@@ -2,11 +2,11 @@
 from django.http import HttpResponse
 
 
-def test(request):  # pylint: disable=unused-argument
+def test(request):
     """ Placeholder test view """
     return HttpResponse("ok")
 
 
-def login(request):  # pylint: disable=unused-argument
+def login(request):
     """ Placeholder test view """
     return HttpResponse("login require")

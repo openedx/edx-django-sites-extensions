@@ -11,7 +11,6 @@ class DjangoSitesExtensionsConfig(AppConfig):
     # noinspection PyUnresolvedReferences
     def ready(self):
         """ Set up for django_sites_extensions app """
-        # pylint: disable=unused-variable
         # pylint: disable=unused-import
         # pylint: disable=import-outside-toplevel
         from django_sites_extensions import models
