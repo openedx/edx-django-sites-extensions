@@ -1,8 +1,8 @@
 """ ROOT_URLCONF for tests """
 
-from django_sites_extensions.tests import views
 from django.urls import path
 
+from django_sites_extensions.tests import views
 
 urlpatterns = [
     path('home', views.test, name='home'),
