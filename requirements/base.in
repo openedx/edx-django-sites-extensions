@@ -2,5 +2,3 @@
 -c constraints.txt
 
 Django
-setuptools
-wheel
