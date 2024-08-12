@@ -1,2 +1,2 @@
-django==4.2.11
+django==4.2.15
 asgiref==3.8.1
