@@ -10,7 +10,7 @@ asgiref==3.8.1
     # via django
 babel==2.16.0
     # via sphinx
-certifi==2024.7.4
+certifi==2024.8.30
     # via requests
 charset-normalizer==3.3.2
     # via requests
@@ -22,7 +22,7 @@ docutils==0.20.1
     # via
     #   sphinx
     #   sphinx-rtd-theme
-idna==3.7
+idna==3.8
     # via requests
 imagesize==1.4.1
     # via sphinx
