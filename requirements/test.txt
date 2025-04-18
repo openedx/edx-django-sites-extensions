@@ -89,14 +89,14 @@ packaging==24.1
     # via pytest
 pbr==6.0.0
     # via stevedore
-pep8==1.7.1
-    # via -r requirements/test.in
 pkginfo==1.10.0
     # via twine
 platformdirs==4.2.2
     # via pylint
 pluggy==1.5.0
     # via pytest
+pycodestyle==2.13.0
+    # via -r requirements/test.in
 pycparser==2.22
     # via cffi
 pygments==2.18.0
@@ -159,6 +159,7 @@ twine==5.1.1
     # via -r requirements/test.in
 urllib3==2.2.2
     # via
+    #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   requests
     #   twine
 wheel==0.44.0
@@ -167,5 +168,4 @@ zipp==3.20.0
     # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
-setuptools==72.2.0
-    # via -r requirements/test.in
+# setuptools
