@@ -159,7 +159,6 @@ twine==5.1.1
     # via -r requirements/test.in
 urllib3==2.2.2
     # via
-    #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   requests
     #   twine
 wheel==0.44.0
@@ -168,4 +167,5 @@ zipp==3.20.0
     # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
-# setuptools
+setuptools==72.2.0
+    # via -r requirements/test.in
