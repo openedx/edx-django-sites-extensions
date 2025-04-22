@@ -8,7 +8,7 @@ coverage
 django-dynamic-fixture
 edx-lint
 mock
-pep8
+pycodestyle
 pytest-cov
 pytest-django
 twine

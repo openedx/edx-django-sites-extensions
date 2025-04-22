@@ -139,6 +139,7 @@ setup(
         'Environment :: Web Environment',
         'Framework :: Django',
         'Framework :: Django :: 4.2',
+        'Framework :: Django :: 5.2',
     ],
     keywords='Django sites edx',
     url='https://github.com/openedx/edx-django-sites-extensions',

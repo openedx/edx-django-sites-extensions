@@ -89,14 +89,14 @@ packaging==24.1
     # via pytest
 pbr==6.0.0
     # via stevedore
-pep8==1.7.1
-    # via -r requirements/test.in
 pkginfo==1.10.0
     # via twine
 platformdirs==4.2.2
     # via pylint
 pluggy==1.5.0
     # via pytest
+pycodestyle==2.13.0
+    # via -r requirements/test.in
 pycparser==2.22
     # via cffi
 pygments==2.18.0
