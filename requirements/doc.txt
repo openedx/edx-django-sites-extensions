@@ -4,46 +4,48 @@
 #
 #    make upgrade
 #
-alabaster==0.7.16
+alabaster==1.0.0
     # via sphinx
 asgiref==3.8.1
     # via django
-babel==2.16.0
+babel==2.17.0
     # via sphinx
-certifi==2024.7.4
+certifi==2025.4.26
     # via requests
-charset-normalizer==3.3.2
+charset-normalizer==3.4.1
     # via requests
-django==4.2.15
+django==4.2.20
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/base.in
-docutils==0.20.1
+docutils==0.21.2
     # via
     #   sphinx
     #   sphinx-rtd-theme
-idna==3.7
+idna==3.10
     # via requests
 imagesize==1.4.1
     # via sphinx
-jinja2==3.1.4
+jinja2==3.1.6
     # via sphinx
-markupsafe==2.1.5
+markupsafe==3.0.2
     # via jinja2
-packaging==24.1
+packaging==25.0
     # via sphinx
-pygments==2.18.0
+pygments==2.19.1
     # via sphinx
 requests==2.32.3
     # via sphinx
+roman-numerals-py==3.1.0
+    # via sphinx
 snowballstemmer==2.2.0
     # via sphinx
-sphinx==7.4.7
+sphinx==8.2.3
     # via
     #   -r requirements/doc.in
     #   sphinx-rtd-theme
     #   sphinxcontrib-jquery
-sphinx-rtd-theme==2.0.0
+sphinx-rtd-theme==3.0.2
     # via -r requirements/doc.in
 sphinxcontrib-applehelp==2.0.0
     # via sphinx
@@ -59,7 +61,9 @@ sphinxcontrib-qthelp==2.0.0
     # via sphinx
 sphinxcontrib-serializinghtml==2.0.0
     # via sphinx
-sqlparse==0.5.1
+sqlparse==0.5.3
     # via django
-urllib3==2.2.2
-    # via requests
+urllib3==2.2.3
+    # via
+    #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
+    #   requests
