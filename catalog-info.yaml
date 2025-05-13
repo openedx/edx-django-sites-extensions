@@ -1,0 +1,24 @@
+# This file records information about this repo. Its use is described in OEP-55:
+# https://open-edx-proposals.readthedocs.io/en/latest/processes/oep-0055-proc-project-maintainers.html
+
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: 'django-sites-extensions'
+  description: >
+    This package includes extensions to the Django "sites" framework 
+    used by Open edX Django IDAs (independently deployable applications).
+  links:
+    - url: "https://github.com/openedx/edx-django-sites-extensions/blob/master/README.rst"
+      title: "Documentation"
+      icon: "Article"
+  annotations:
+    openedx.org/arch-interest-groups: "angonz"
+    openedx.org/release: "master"
+spec:
+  owner: user:angonz
+  type: 'service'
+  lifecycle: 'production'
+  subcomponentOf: 'edx-platform'
+  dependsOn:
+  - 'edx-platform'
