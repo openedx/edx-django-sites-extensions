@@ -19,7 +19,7 @@ cffi==1.17.1
     # via cryptography
 charset-normalizer==3.4.2
     # via requests
-click==8.2.0
+click==8.2.1
     # via
     #   click-log
     #   code-annotations
@@ -28,11 +28,11 @@ click-log==0.4.0
     # via edx-lint
 code-annotations==2.3.0
     # via edx-lint
-coverage[toml]==7.8.0
+coverage[toml]==7.8.2
     # via
     #   -r requirements/test.in
     #   pytest-cov
-cryptography==44.0.3
+cryptography==45.0.3
     # via secretstorage
 dill==0.4.0
     # via pylint
@@ -93,7 +93,7 @@ pbr==6.1.1
     # via stevedore
 platformdirs==4.3.8
     # via pylint
-pluggy==1.5.0
+pluggy==1.6.0
     # via pytest
 pycodestyle==2.13.0
     # via -r requirements/test.in
@@ -169,7 +169,7 @@ zipp==3.21.0
     # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
-setuptools==80.4.0
+setuptools==80.8.0
     # via
     #   -r requirements/test.in
     #   pbr
