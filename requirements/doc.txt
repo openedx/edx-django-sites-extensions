@@ -10,11 +10,11 @@ asgiref==3.8.1
     # via django
 babel==2.17.0
     # via sphinx
-certifi==2025.4.26
+certifi==2025.6.15
     # via requests
 charset-normalizer==3.4.2
     # via requests
-django==4.2.21
+django==4.2.23
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/base.in
@@ -34,7 +34,7 @@ packaging==25.0
     # via sphinx
 pygments==2.19.1
     # via sphinx
-requests==2.32.3
+requests==2.32.4
     # via sphinx
 roman-numerals-py==3.1.0
     # via sphinx
