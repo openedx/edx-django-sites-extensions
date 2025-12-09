@@ -1,23 +1,35 @@
-clean:
+.DEFAULT_GOAL := help
+
+.PHONY: help
+help: ## Show this help message
+	@echo 'Usage: make [target]'
+	@echo ''
+	@echo 'Available targets:'
+	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "  %-15s %s\n", $$1, $$2}' $(MAKEFILE_LIST)
+
+.PHONY: clean
+clean: ## Remove generated files and tox environments
 	coverage erase
 	rm -rf .tox
 	find . -name '*.pyc' -delete
 
-quality:
+.PHONY: quality
+quality: ## Run quality checks (pycodestyle, pylint)
 	tox -e quality
 
-requirements:
+.PHONY: requirements
+requirements: ## Install test requirements
 	pip install -qr requirements/pip.txt
 	pip install -qr requirements/pip_tools.txt
 	pip-sync requirements/test.txt
 
-test:
+.PHONY: test
+test: ## Run tests using tox
 	tox
 
-.PHONY: clean, quality, requirements
-
+.PHONY: upgrade
 upgrade: export CUSTOM_COMPILE_COMMAND=make upgrade
-upgrade: ## update the requirements/*.txt files with the latest packages satisfying requirements/*.in
+upgrade: ## Update the requirements/*.txt files with the latest packages satisfying requirements/*.in
 	pip install -q -r requirements/pip_tools.txt
 	pip-compile --rebuild --upgrade --allow-unsafe -o requirements/pip.txt requirements/pip.in
 	pip-compile --upgrade -o requirements/pip_tools.txt requirements/pip_tools.in
