@@ -4,11 +4,11 @@
 #
 #    make upgrade
 #
-asgiref==3.8.1
+asgiref==3.11.0
     # via django
-django==4.2.21
+django==5.2.9
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/base.in
-sqlparse==0.5.3
+sqlparse==0.5.4
     # via django
