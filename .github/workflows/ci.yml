@@ -36,7 +36,7 @@ jobs:
       run: tox
 
     - name: Run Coverage
-      uses: codecov/codecov-action@v4
+      uses: codecov/codecov-action@v5
       with:
         flags: unittests
         fail_ci_if_error: true
