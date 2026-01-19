@@ -4,7 +4,7 @@
 #
 #    make upgrade
 #
-cachetools==6.2.3
+cachetools==6.2.4
     # via
     #   -r requirements/tox.txt
     #   tox
@@ -20,7 +20,7 @@ distlib==0.4.0
     # via
     #   -r requirements/tox.txt
     #   virtualenv
-filelock==3.20.0
+filelock==3.20.3
     # via
     #   -r requirements/tox.txt
     #   tox
@@ -43,9 +43,9 @@ pyproject-api==1.10.0
     # via
     #   -r requirements/tox.txt
     #   tox
-tox==4.32.0
+tox==4.34.1
     # via -r requirements/tox.txt
-virtualenv==20.35.4
+virtualenv==20.36.1
     # via
     #   -r requirements/tox.txt
     #   tox
