@@ -4,7 +4,7 @@
 #
 #    make upgrade
 #
-cachetools==7.0.3
+cachetools==7.0.4
     # via
     #   -r requirements/tox.txt
     #   tox
@@ -41,7 +41,7 @@ pyproject-api==1.10.0
     # via
     #   -r requirements/tox.txt
     #   tox
-python-discovery==1.1.0
+python-discovery==1.1.1
     # via
     #   -r requirements/tox.txt
     #   virtualenv
