@@ -137,7 +137,6 @@ setup(
         'Intended Audience :: Developers',
         'Environment :: Web Environment',
         'Framework :: Django',
-        'Framework :: Django :: 4.2',
         'Framework :: Django :: 5.2',
     ],
     keywords='Django sites edx',

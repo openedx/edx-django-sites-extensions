@@ -12,6 +12,8 @@ Change Log
 Unreleased
 ----------
 
+* Dropped Django 4.2 support; bumped code-annotations to 3.0.0, edx-lint to 6.0.0
+
 5.1.0 - 2025-04-18
 ---------------------
 * Added Support for ``django 5.2``.
