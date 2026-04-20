@@ -12,9 +12,9 @@ babel==2.18.0
     # via sphinx
 certifi==2026.2.25
     # via requests
-charset-normalizer==3.4.5
+charset-normalizer==3.4.7
     # via requests
-django==5.2.12
+django==5.2.13
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/base.in
@@ -30,11 +30,11 @@ jinja2==3.1.6
     # via sphinx
 markupsafe==3.0.3
     # via jinja2
-packaging==26.0
+packaging==26.1
     # via sphinx
-pygments==2.19.2
+pygments==2.20.0
     # via sphinx
-requests==2.32.5
+requests==2.33.1
     # via sphinx
 roman-numerals==4.1.0
     # via sphinx
