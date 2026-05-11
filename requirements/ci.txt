@@ -41,7 +41,7 @@ pyproject-api==1.10.0
     # via
     #   -r requirements/tox.txt
     #   tox
-python-discovery==1.2.2
+python-discovery==1.3.0
     # via
     #   -r requirements/tox.txt
     #   tox
@@ -52,7 +52,7 @@ tomli-w==1.2.0
     #   tox
 tox==4.53.1
     # via -r requirements/tox.txt
-virtualenv==21.3.0
+virtualenv==21.3.1
     # via
     #   -r requirements/tox.txt
     #   tox
