@@ -4,7 +4,7 @@
 #
 #    make upgrade
 #
-cachetools==7.1.2
+cachetools==7.1.4
     # via
     #   -r requirements/tox.txt
     #   tox
