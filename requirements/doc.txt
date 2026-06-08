@@ -14,7 +14,7 @@ certifi==2026.5.20
     # via requests
 charset-normalizer==3.4.7
     # via requests
-django==5.2.14
+django==5.2.15
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/base.in
@@ -22,7 +22,7 @@ docutils==0.22.4
     # via
     #   sphinx
     #   sphinx-rtd-theme
-idna==3.17
+idna==3.18
     # via requests
 imagesize==2.0.0
     # via sphinx
@@ -38,7 +38,7 @@ requests==2.34.2
     # via sphinx
 roman-numerals==4.1.0
     # via sphinx
-snowballstemmer==3.1.0
+snowballstemmer==3.1.1
     # via sphinx
 sphinx==9.1.0
     # via
