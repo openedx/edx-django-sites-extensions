@@ -30,7 +30,7 @@ coverage[toml]==7.14.1
     # via
     #   -r requirements/test.in
     #   pytest-cov
-cryptography==48.0.0
+cryptography==49.0.0
     # via secretstorage
 dill==0.4.1
     # via pylint
@@ -45,7 +45,7 @@ edx-lint==6.1.0
     # via -r requirements/test.in
 id==1.6.1
     # via twine
-idna==3.17
+idna==3.18
     # via requests
 iniconfig==2.3.0
     # via pytest
@@ -101,7 +101,7 @@ pygments==2.20.0
     #   pytest
     #   readme-renderer
     #   rich
-pylint==4.0.5
+pylint==4.0.6
     # via
     #   edx-lint
     #   pylint-celery
@@ -115,7 +115,7 @@ pylint-plugin-utils==0.9.0
     # via
     #   pylint-celery
     #   pylint-django
-pytest==9.0.3
+pytest==9.1.0
     # via
     #   pytest-cov
     #   pytest-django
@@ -127,7 +127,7 @@ python-slugify==8.0.4
     # via code-annotations
 pyyaml==6.0.3
     # via code-annotations
-readme-renderer==44.0
+readme-renderer==45.0
     # via twine
 requests==2.34.2
     # via
