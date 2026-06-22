@@ -11,7 +11,7 @@ astroid==4.0.4
     # via
     #   pylint
     #   pylint-celery
-certifi==2026.5.20
+certifi==2026.6.17
     # via requests
 cffi==2.0.0
     # via cryptography
@@ -26,7 +26,7 @@ click-log==0.4.0
     # via edx-lint
 code-annotations==3.0.0
     # via edx-lint
-coverage[toml]==7.14.1
+coverage[toml]==7.14.2
     # via
     #   -r requirements/test.in
     #   pytest-cov
@@ -115,7 +115,7 @@ pylint-plugin-utils==0.9.0
     # via
     #   pylint-celery
     #   pylint-django
-pytest==9.1.0
+pytest==9.1.1
     # via
     #   pytest-cov
     #   pytest-django
