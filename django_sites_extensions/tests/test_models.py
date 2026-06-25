@@ -51,7 +51,7 @@ class PatchedSiteManagerTestCase(TestCase):
         """
         request = HttpRequest()
         request.META['HTTP_HOST'] = self.foo_site.domain
-        past = datetime.datetime.utcnow() - datetime.timedelta(0, 300)
+        past = datetime.datetime.now(datetime.UTC) - datetime.timedelta(0, 300)
 
         # Test getting current site by request host
         site = Site.objects.get_current(request)

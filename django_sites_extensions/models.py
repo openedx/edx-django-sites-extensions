@@ -66,7 +66,7 @@ def patched_get_site_by_id(self, site_id):
     Site model's relationship accessors to take effect without having to manual
     recycle all Django worker processes active in an application environment.
     """
-    now = datetime.datetime.utcnow()
+    now = datetime.datetime.now(datetime.UTC)
     site = models.SITE_CACHE.get(site_id)
     cache_timeout = SITE_CACHE_TIMEOUTS.get(site_id, now)
     if not site or cache_timeout <= now:
@@ -88,7 +88,7 @@ def patched_get_site_by_request(self, request):
     recycle all Django worker processes active in an application environment.
     """
     host = request.get_host()
-    now = datetime.datetime.utcnow()
+    now = datetime.datetime.now(datetime.UTC)
     site = models.SITE_CACHE.get(host)
     cache_timeout = SITE_CACHE_TIMEOUTS.get(host, now)
     if not site or cache_timeout <= now:
