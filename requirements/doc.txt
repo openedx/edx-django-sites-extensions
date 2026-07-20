@@ -6,7 +6,7 @@
 #
 alabaster==1.0.0
     # via sphinx
-asgiref==3.11.1
+asgiref==3.12.1
     # via django
 babel==2.18.0
     # via sphinx
