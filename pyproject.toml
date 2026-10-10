@@ -1,0 +1,114 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm>8.1"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "edx-django-sites-extensions"
+description = "Custom extensions for the Django sites framework"
+requires-python = ">=3.12"
+license = "AGPL-3.0-only"
+license-files = ["LICENSE*", "AUTHORS*"]
+authors = [
+    {name = "Open edX Project", email = "oscm@openedx.org"},
+]
+classifiers = [
+    'Development Status :: 4 - Beta',
+    'Programming Language :: Python',
+    'Programming Language :: Python :: 3.12',
+    'Topic :: Internet',
+    'Intended Audience :: Developers',
+    'Environment :: Web Environment',
+    'Framework :: Django',
+    'Framework :: Django :: 5.2',
+]
+keywords = [
+    "Django",
+    "sites",
+    "edx",
+]
+
+dynamic = ["readme", "version"]
+
+dependencies = [
+    "Django",
+]
+
+[project.urls]
+Homepage = "https://github.com/openedx/edx-django-sites-extensions"
+Repository = "https://github.com/openedx/edx-django-sites-extensions"
+
+[dependency-groups]
+test = [
+    "coverage",
+    "django-dynamic-fixture",
+    "edx-lint",
+    "mock",
+    "pycodestyle",
+    "pytest-cov",
+    "pytest-django",
+    "twine",
+    "setuptools",
+    "wheel",
+    "Django>=5.2,<6.0",
+]
+quality = [
+    {include-group = "test"},
+    "build",
+]
+doc = [
+    "Sphinx",
+    "sphinx_rtd_theme",
+]
+ci = [
+    "tox",
+    "tox-uv",
+]
+dev = [
+    {include-group = "quality"},
+    {include-group = "ci"},
+]
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.dynamic]
+readme = {file = ["README.rst"], content-type = "text/x-rst"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+exclude = ["*.tests", "*.tests.*"]
+
+[tool.setuptools.exclude-package-data]
+"*" = ["tests/*"]
+
+[tool.semantic_release]
+build_command = "pip install build && SETUPTOOLS_SCM_PRETEND_VERSION=$NEW_VERSION python -m build"
+
+[tool.setuptools_scm]
+version_scheme = 'only-version'
+local_scheme = 'no-local-version'
+fallback_version = "0.0.0.dev0"
+
+[tool.uv]
+constraint-dependencies = [
+    "Django<6.0",
+    "elasticsearch<7.14.0",
+    "social-auth-app-django<6.0.0",
+    "social-auth-core<5.0.0",
+    "pip<26.2.1",
+]
+
+[tool.edx_lint]
+uv_constraints = []
+
+[tool.coverage.run]
+branch = true
+data_file = ".coverage"
+source = ["src"]
+omit = [
+    "*/django_sites_extensions/apps.py",
+    "*migrations*",
+]
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "test_settings"
