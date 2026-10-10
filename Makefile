@@ -16,7 +16,7 @@ clean: ## Remove generated files and tox environments
 .PHONY: quality
 quality: ## Run quality checks (pycodestyle, pylint)
 	pycodestyle --config=.pycodestyle src/django_sites_extensions
-	pylint --rcfile pylintrc src/django_sites_extensions
+	PYTHONPATH=. DJANGO_SETTINGS_MODULE=test_settings pylint --rcfile pylintrc src/django_sites_extensions
 	python -m build --wheel
 	twine check dist/*
 
