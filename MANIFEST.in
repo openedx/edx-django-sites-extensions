@@ -6,6 +6,7 @@ prune docs
 exclude Makefile
 exclude .gitignore
 exclude tox.ini
+exclude CHANGELOG.rst
 
 # Exclude test/coverage artifacts
 prune htmlcov
