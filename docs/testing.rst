@@ -1,10 +1,9 @@
 Testing
 =======
 
-If you have not already done so, create/activate a `virtualenv`_. Unless otherwise stated, assume all terminal code
-below is executed within the virtualenv.
+Dependencies are managed with `uv`_.
 
-.. _virtualenv: https://virtualenvwrapper.readthedocs.org/en/latest/
+.. _uv: https://docs.astral.sh/uv/
 
 Install dependencies
 --------------------
@@ -16,14 +15,14 @@ Dependencies can be installed via the command below.
 
 Run tests
 --------------------
-The command below runs the Python tests and code quality validation—Pylint and PEP8.
+The command below runs the Python tests.
 
 .. code-block:: bash
 
-    $ make test
+    $ uv run make test
 
 Code quality validation can be run independently with:
 
 .. code-block:: bash
 
-    $ make quality
+    $ uv run make quality
